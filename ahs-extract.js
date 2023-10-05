@@ -327,7 +327,7 @@ if (program.args.length) {
 				 console.log("Found file".green, file.name);
 				});
 			}
-			const dir = filename.split(".")[0];
+			const dir = path.basename(filename, ".ahs");
 			if ((program.extract || program.json) && !fs.existsSync(dir)) fs.mkdirSync(dir);
 			if (program.extract) {
 				files.forEach(file => {
